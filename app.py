@@ -65,6 +65,5 @@ dp.add_handler(CommandHandler("news", news))
 dp.add_handler(MessageHandler(Filters.text, message_handler))
 dp.add_error_handler(error)
  
-if __name__ == "__main__":
-   
+if __name__ == "__main__":   
     app.run(port=8443)
