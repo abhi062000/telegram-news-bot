@@ -3,12 +3,13 @@ from flask import Flask, request
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext, Dispatcher
 from telegram import Update, Bot, ReplyKeyboardMarkup
 from utils import get_reply, fetch_news, topics_keyboard
+import os
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TOKEN = "1789252593:AAE7L-RrEaxEITZvPGsY2TB75bZznc2m8Fk"
+TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 
 
 app = Flask(__name__)
