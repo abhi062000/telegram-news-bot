@@ -1,6 +1,7 @@
 # POLLING
 
 import logging
+import os
 from flask import Flask, request
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext, Dispatcher
 # Enable logging
@@ -11,7 +12,8 @@ logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s
 # logger object can create logs for your program
 logger = logging.getLogger(__name__)
 
-TOKEN = "1789252593:AAE7L-RrEaxEITZvPGsY2TB75bZznc2m8Fk"
+
+TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
 
 # https://python-telegram-bot.readthedocs.io/en/stable/ go to this link for referring the func usage
 
