@@ -4,12 +4,13 @@ from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, Callb
 from telegram import Update, Bot, ReplyKeyboardMarkup
 from utils import get_reply, fetch_news, topics_keyboard
 import os
+from decouple import config
 
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
+TOKEN = config('TELEGRAM_BOT_TOKEN')
 
 
 app = Flask(__name__)
