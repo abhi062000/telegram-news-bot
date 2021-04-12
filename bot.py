@@ -6,14 +6,14 @@ from flask import Flask, request
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters, CallbackContext, Dispatcher
 # Enable logging
 from telegram import Update, Bot
+from decouple import config
 # logging: any kind of error happen or warning is raised, so this is used to parse it in a systematic manner
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     level=logging.INFO)
 # logger object can create logs for your program
 logger = logging.getLogger(__name__)
 
-
-TOKEN = os.environ.get('TELEGRAM_BOT_TOKEN')
+TOKEN = config('TELEGRAM_BOT_TOKEN')
 
 # https://python-telegram-bot.readthedocs.io/en/stable/ go to this link for referring the func usage
 
